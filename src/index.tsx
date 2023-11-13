@@ -18,8 +18,6 @@ import records from "/records.png"
 import contact from "/call.svg"
 import user from "/user.svg"
 
-import "tailwindcss/tailwind.css";
-
 enum State {
   Home,
   Register,
@@ -129,7 +127,8 @@ function Dashboard({ name }: { name: string }) {
   )
 }
 
-const Input = (props: { id: string, type?: string }) => <input required {...props} class="px-2 py-1 w-full" />
+const Input = (props: { id: string, type?: string }) =>
+  <input required {...props} class="px-2 py-1 w-full border border-black" />
 
 function Register({ setState }: { setState: StateUpdater<State> }) {
   const [registerSuccess, setRegisterSuccess] = useState(false);
@@ -216,7 +215,7 @@ function Header({ setState }: { setState: StateUpdater<State> }) {
         </div>
       </header>
       <button>
-        <img src={chatbot} class="bg-green-800 w-20 fixed bottom-0 right-0 m-4 p-4 rounded-full" />
+        <img src={chatbot} class="bg-green-800 w-20 fixed bottom-0 right-0 m-4 p-4 rounded-full z-10" />
       </button>
     </>
   )
